@@ -67,16 +67,4 @@ class NeighborhoodPets:
             species_of_pet.add(self._list_of_pets[name]['species'])
         return species_of_pet
 
-np = NeighborhoodPets()
-try:
-    np.add_pet("Fluffy", "gila monster", "Oksana")
-    np.add_pet("Tiny", "stegasaurus", "Rachel")
-    np.add_pet("Spot", "zebra", "Farrokh")
-except DuplicateNameError:
-    print('You tried to enter a pet with the same name as another pet.')
-np.save_as_json("pets.json")
-np.delete_pet("Tiny")
-spot_owner = np.get_owner("Spot")
 
-np.read_json("other_pets.json")  # where other_pets.json is a file it saved in some previous session
-species_set = np.get_all_species()
